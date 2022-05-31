@@ -1,6 +1,9 @@
 # Abgabe
 In diesem Repository befindet sich alles für unsere Abgabe der Smart-Classroom-Challenge der Gruppe Gabriel Torres Gamez, Yvo Keller, Etienne Roulet und Florin Barbisch.
 
+# Bericht
+Der Bericht ist im Hauptverzeichnis dieses Repositories zu finden: [Bericht](https://github.com/Smart-Classroom-Challenge/Abgabe/blob/main/Bericht-Smart-Classroom.pdf)
+
 # Struktur
 ## Data-Evaluation
 Hier findet man die Jupyter Notebooks, welche wir zur Beantwortung der Forschungsfragen verwenden.
