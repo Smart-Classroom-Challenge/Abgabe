@@ -1,24 +1,24 @@
 # Abgabe
-In diesem Repository befindet sich alles für unsere Abgabe der Smart-Classroom-Challenge der Gruppe Gabriel Torres Gamez, Yvo Kelle, Etienne Roulet und Florin Barbisch.
+In diesem Repository befindet sich alles für unsere Abgabe der Smart-Classroom-Challenge der Gruppe Gabriel Torres Gamez, Yvo Keller, Etienne Roulet und Florin Barbisch.
 
 # Struktur
 ## Data-Evaluation
-Beantwortung der Forschungsfragen.
+Hier findet man die Jupyter Notebooks, welche wir zur Beantwortung der Forschungsfragen verwenden.
 
 ## Data
-CSV der Daten.
+CSV Export der gemessenen Daten.
 
 ## Django-Backend
 REST-API (inkl. Testcases) und MQTT-Subscriber welcher die Daten in die DB schreibt.
 
 ## Feather-Client
-Code des Feathers um Sensoren auszulesen und Daten weiter an den Raspberry Pi zusenden. Auch finden sich hier das 3D-Modell des Gehäuses des Feathers
+Code des Feathers um Sensoren auszulesen und Daten weiter an den Raspberry Pi zusenden. Auch befinden sich hier die 3D-Modelle des Gehäuses des Feathers
 
 ## Raspberry-Client
-Code für den Empfang und weitersenden der Daten des Feathers, Code für den Personenzähler und Code für Verbindungsmetadaten. Auch finden sich hier das 3D-Modell des Gehäuses des Raspberry Pis.
+Code für den Empfang und weitersenden der Daten des Feathers, Code für den Personenzähler und Code für die Verbindungsmetadaten. Auch befinden sich hier die 3D-Modelle des Gehäuses des Raspberry Pis.
 
 ## Vue-MQTT-Frontend
-Vuejs Frontend, welches ermöglicht die Daten der Messstation via MQTT zu Empfangen.
+VueJs Frontend, welches ermöglicht, die Daten der Messstationen via MQTT zu empfangen.
 
 # Video
 Einzig das Video ist nicht in diesem Repository enthalten, es befindet sich auf: [![END-TO-END DEMO | Smart Classroom Challenge | #team4gewinnt
