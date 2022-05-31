@@ -1,0 +1,46 @@
+title Smart Classroom MQTT Communication
+
+
+database Timescale DB
+
+
+
+Django Backend->MQTT Broker:connect()
+MQTT Broker->Django Backend:connection acknownledgement
+
+Django Backend->MQTT Broker:subscribe({topic: 'fhnw/+/+/measurements'})
+Django Backend->MQTT Broker:subscribe({topic: 'fhnw/+/+/entranceevent'})
+Django Backend->MQTT Broker:subscribe({topic: 'fhnw/+/+/connectionhistory'})
+
+Rasberry Client->MQTT Broker: connect()
+Rasberry Client<-MQTT Broker: connection acknowledgement()
+
+Feather Client<-Rasberry Client: ble.connect()
+
+
+group while [ble.connected]
+Feather Client->Rasberry Client:ble_connection.uart.write("CO2:" + str(CO2) + ":PPM;")
+Feather Client->Rasberry Client:ble_connection.uart.write("TEM:" + str(TEMP) + ":C;")
+Feather Client->Rasberry Client:ble_connection.uart.write("HUM:" + str(HUMIDITY) + ":%%rH;")
+Feather Client->Rasberry Client:ble_connection.uart.write("MOT:" + str(MOTION) + ":BOOL;")
+Feather Client->Rasberry Client:ble_connection.uart.write("MOT:" + str(MOTION) + ":BOOL;")
+Feather Client->Rasberry Client:ble_connection.uart.write("LIG:" + str(LIGHT) + ":NUM;")
+
+end
+
+
+group while [connection and connection.connected]
+Rasberry Client->MQTT Broker:publish(topic: 'fhnw/+/+/measurements', message: object)
+end
+
+group while True
+Rasberry Client->MQTT Broker:publish(topic: 'fhnw/+/+/entranceevent', message: object)
+Rasberry Client->MQTT Broker:publish(topic: 'fhnw/+/+/connectionhistory', message: object)
+end
+
+
+
+
+MQTT Broker->Django Backend:callback on_message({topic: obj, message: object})
+Django Backend->Timescale DB:save(Django:ORM:object(obj))
+

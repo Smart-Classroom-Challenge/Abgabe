@@ -1,0 +1,5 @@
+id;active;name;fk_classroom_id
+2;false;Station_Primar_EG;2
+1;true;Station_Primar_OG1;1
+5;true;Station_Oberstufe;54
+6;true;Station_Oberstufe_EntranceEvents;54

@@ -1,0 +1,4 @@
+certifi==2021.10.8
+paho-mqtt==1.6.1
+adafruit-circuitpython-ble==8.2.1
+pytz==2021.3
